@@ -1,0 +1,41 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.3, pytest-9.0.2, pluggy-1.6.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\nagse\OneDrive\Desktop\fraud-detection-system
+plugins: anyio-4.9.0, mock-3.15.1
+collecting ... collected 16 items
+
+tests/test_features.py::TestFeaturePipelineBasic::test_output_is_dataframe PASSED [  6%]
+tests/test_features.py::TestFeaturePipelineBasic::test_output_column_count PASSED [ 12%]
+tests/test_features.py::TestFeaturePipelineBasic::test_output_column_order PASSED [ 18%]
+tests/test_features.py::TestFeaturePipelineBasic::test_output_is_all_numeric PASSED [ 25%]
+tests/test_features.py::TestFeaturePipelineBasic::test_single_row_output PASSED [ 31%]
+tests/test_features.py::TestFeaturePipelineBasic::test_batch_transform PASSED [ 37%]
+tests/test_features.py::TestTemporalFeatures::test_night_transaction_flagged PASSED [ 43%]
+tests/test_features.py::TestTemporalFeatures::test_day_transaction_not_flagged PASSED [ 50%]
+tests/test_features.py::TestTemporalFeatures::test_hour_extraction PASSED [ 56%]
+tests/test_features.py::TestAmountFeatures::test_log_amount_is_positive PASSED [ 62%]
+tests/test_features.py::TestAmountFeatures::test_zero_amount_handled PASSED [ 68%]
+tests/test_features.py::TestBooleanNormalization::test_is_international_int PASSED [ 75%]
+tests/test_features.py::TestBooleanNormalization::test_card_not_present_int FAILED [ 81%]
+tests/test_features.py::TestPipelineErrors::test_transform_without_fit_raises PASSED [ 87%]
+tests/test_features.py::TestPipelineErrors::test_fit_transform_is_consistent PASSED [ 93%]
+tests/test_features.py::TestPipelineErrors::test_missing_optional_field_handled PASSED [100%]
+
+================================== FAILURES ===================================
+_____________ TestBooleanNormalization.test_card_not_present_int ______________
+
+self = <tests.test_features.TestBooleanNormalization object at 0x0000021B09AD7ED0>
+fitted_pipeline = FeaturePipeline(status=fitted, features=12)
+safe_payload = {'amount': 45.5, 'card_present': True, 'channel': 'in_store', 'city': 'London', ...}
+
+    def test_card_not_present_int(self, fitted_pipeline, safe_payload):
+        raw_pipeline = FeaturePipeline()
+        df = raw_pipeline._base_transform([safe_payload])
+>       assert df["card_present"].iloc[0] == 0
+E       assert np.int64(1) == 0
+
+tests\test_features.py:125: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_features.py::TestBooleanNormalization::test_card_not_present_int
+======================== 1 failed, 15 passed in 2.75s =========================

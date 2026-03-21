@@ -1,0 +1,20 @@
+{
+  "transaction_id": "tx_demo_safe_001",
+  "fraud_probability": 0.012,
+  "anomaly_score": 0.085,
+  "risk_level": "low",
+  "decision": "ALLOW",
+  "top_reasons": [
+    {
+      "feature": "daytime_transaction",
+      "contribution": 0.1,
+      "direction": "decreases_risk"
+    },
+    {
+      "feature": "domestic_transaction",
+      "contribution": 0.1,
+      "direction": "decreases_risk"
+    }
+  ],
+  "timestamp": "2026-03-21T10:30:01.123456Z"
+}

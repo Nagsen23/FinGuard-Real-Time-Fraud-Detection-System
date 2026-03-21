@@ -1,0 +1,54 @@
+{
+  "model_version": "1.0.0",
+  "training_timestamp": "2026-03-21T15:14:02.225824",
+  "dataset_path": "data\\raw\\transactions.csv",
+  "dataset_rows": 30000,
+  "fraud_ratio": 0.035,
+  "feature_names": [
+    "amount_log",
+    "transaction_type",
+    "merchant_category",
+    "device_type",
+    "channel",
+    "country",
+    "hour",
+    "day_of_week",
+    "is_weekend",
+    "is_night_transaction",
+    "is_international",
+    "card_present"
+  ],
+  "categorical_columns": [
+    "transaction_type",
+    "merchant_category",
+    "device_type",
+    "channel",
+    "country"
+  ],
+  "numeric_columns": [
+    "amount",
+    "amount_log",
+    "hour",
+    "day_of_week"
+  ],
+  "algorithms": {
+    "supervised": "XGBClassifier",
+    "anomaly": "IsolationForest"
+  },
+  "metrics": {
+    "supervised_auc": 1.0,
+    "supervised_f1": 1.0
+  },
+  "thresholds": {
+    "low_max": 0.2,
+    "medium_max": 0.5,
+    "high_max": 0.75,
+    "alpha": 0.6,
+    "beta": 0.4
+  },
+  "artifacts": {
+    "supervised_model": "models\\supervised_model.joblib",
+    "anomaly_model": "models\\anomaly_model.joblib",
+    "preprocessor": "models\\preprocessor.joblib"
+  }
+}

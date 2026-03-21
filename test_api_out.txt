@@ -1,0 +1,27 @@
+============================= test session starts =============================
+platform win32 -- Python 3.13.3, pytest-9.0.2, pluggy-1.6.0 -- C:\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\nagse\OneDrive\Desktop\fraud-detection-system
+plugins: anyio-4.9.0, mock-3.15.1
+collecting ... collected 18 items
+
+tests/test_api.py::TestTransactionRequestSchema::test_valid_payload_parses PASSED [  5%]
+tests/test_api.py::TestTransactionRequestSchema::test_country_uppercased PASSED [ 11%]
+tests/test_api.py::TestTransactionRequestSchema::test_amount_rounded PASSED [ 16%]
+tests/test_api.py::TestTransactionRequestSchema::test_missing_transaction_id_raises PASSED [ 22%]
+tests/test_api.py::TestTransactionRequestSchema::test_missing_user_id_raises PASSED [ 27%]
+tests/test_api.py::TestTransactionRequestSchema::test_negative_amount_raises PASSED [ 33%]
+tests/test_api.py::TestTransactionRequestSchema::test_zero_amount_raises PASSED [ 38%]
+tests/test_api.py::TestTransactionRequestSchema::test_invalid_transaction_type_raises PASSED [ 44%]
+tests/test_api.py::TestTransactionRequestSchema::test_invalid_merchant_category_raises PASSED [ 50%]
+tests/test_api.py::TestTransactionRequestSchema::test_default_device_type PASSED [ 55%]
+tests/test_api.py::TestTransactionRequestSchema::test_default_timestamp_set PASSED [ 61%]
+tests/test_api.py::TestTransactionRequestSchema::test_boolean_fields PASSED [ 66%]
+tests/test_api.py::TestPredictionResponseSchema::test_valid_response_parses PASSED [ 72%]
+tests/test_api.py::TestPredictionResponseSchema::test_risk_level_enum PASSED [ 77%]
+tests/test_api.py::TestPredictionResponseSchema::test_fraud_probability_out_of_range_raises PASSED [ 83%]
+tests/test_api.py::TestPredictionResponseSchema::test_anomaly_score_out_of_range_raises PASSED [ 88%]
+tests/test_api.py::TestPredictionResponseSchema::test_top_reasons_structure PASSED [ 94%]
+tests/test_api.py::TestPredictionResponseSchema::test_invalid_decision_raises PASSED [100%]
+
+============================= 18 passed in 0.30s ==============================

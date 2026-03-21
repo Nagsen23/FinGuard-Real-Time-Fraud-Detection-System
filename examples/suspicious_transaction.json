@@ -1,0 +1,15 @@
+{
+  "transaction_id": "tx_demo_fraud_002",
+  "user_id": "user_88219",
+  "merchant_id": "merchant_9911",
+  "amount": 12500.00,
+  "transaction_type": "transfer",
+  "merchant_category": "other",
+  "device_type": "desktop",
+  "channel": "online",
+  "city": "Unknown City",
+  "country": "RU",
+  "timestamp": "2026-03-21T03:15:00Z",
+  "is_international": true,
+  "card_present": false
+}
