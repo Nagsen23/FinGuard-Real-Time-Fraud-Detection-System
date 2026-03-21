@@ -1,4 +1,4 @@
-# Fraud Detection System
+# FinGuard-Real-Time-Fraud-Detection-System
 
 A scalable, production-ready machine learning system for real-time fraud detection. 
 This project integrates an orchestrated training pipeline, a fast real-time inference API, and a persistent audit logging layer.
